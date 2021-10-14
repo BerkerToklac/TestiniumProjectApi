@@ -45,7 +45,7 @@ public class test {
     }
 
     @Test
-    public void test1() {
+    public void createBoard() {
 
 
         Response response = given().accept(ContentType.JSON)
@@ -63,13 +63,13 @@ public class test {
 
     }
     @Test(priority = 2)
-    public  void  CreateCards(){
+    public  void  createCards(){
 
         Response response = given().log().all().accept(ContentType.JSON)
                 .and().contentType(ContentType.JSON)
                 .queryParam("key",key)
                 .queryParam("token",token)
-                .queryParam("name","newCard")
+                .queryParam("name","newList")
                 .queryParam("idBoard",idBoard)
                 .when().post("1/lists");
         response.prettyPrint();
@@ -104,7 +104,7 @@ public class test {
 
     }
     @Test(priority = 3)
-    public  void  UpdateCard(){
+    public  void  updateCard(){
 
         Response response = given().log().all().accept(ContentType.JSON)
                 .and().contentType(ContentType.JSON)
@@ -122,7 +122,7 @@ public class test {
     }
 
     @Test(priority = 4)
-    public  void  DeleteCards(){
+    public  void  deleteCards(){
 
         Response response=   given()
                 .queryParam("key",key)
@@ -143,7 +143,7 @@ public class test {
 
     }
     @Test(priority = 5)
-    public void DeleteBoard(){
+    public void deleteBoard(){
 
         Response response = given()
                 .queryParam("key",key)
